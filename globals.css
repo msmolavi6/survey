@@ -1,0 +1,48 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0px;
+    height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+    outline: 2px solid #4a90e2 !important;
+    outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "IRANSansWeb-Bold";
+    src: url("https://anima-uploads.s3.amazonaws.com/5eb2f71e80f226d2805e6692/IRANSansWeb_Bold.ttf")
+    format("truetype");
+}
+
+@font-face {
+    font-family: "IRANYekan-Black";
+    src: url("https://anima-uploads.s3.amazonaws.com/5c63d6746f3712000b46500b/IRANYekanBlack.ttf")
+    format("truetype");
+}
+
+@font-face {
+    font-family: "IRANYekan-Medium";
+    src: url("https://anima-uploads.s3.amazonaws.com/5c558dc8c806ca000ac9859a/IRANYekanMedium.ttf")
+    format("truetype");
+}
+
+@font-face {
+    font-family: "IRANYekan-Regular";
+    src: url("https://anima-uploads.s3.amazonaws.com/projects/60e71142562cf33fb2eb2995/fonts/iranyekanregular.ttf")
+    format("truetype");
+}
+
+@font-face {
+    font-family: "IRANYekan-Bold";
+    src: url("https://anima-uploads.s3.amazonaws.com/5c487585fe338f000a2bfd07/IRANYekanBold.ttf")
+    format("truetype");
+}

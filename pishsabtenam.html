@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .signup-popup {
+            display: flex;
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            direction: rtl;
+        }
+        .signup-popup img {
+            width: 50%;
+            object-fit: cover;
+            background-color: #f9f9f9;
+        }
+        .signup-popup form {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .signup-popup h2 {
+            margin: 0 0 16px;
+            font-size: 1.5em;
+        }
+        .signup-popup p {
+            margin: 0 0 24px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .signup-popup input,
+        .signup-popup select,
+        .signup-popup button {
+            margin-bottom: 16px;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+        .signup-popup button {
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .signup-popup button:hover {
+            background-color: #d62839;
+        }
+    </style>
+    <title>پیش ثبت نام</title>
+</head>
+<body>
+<div class="signup-popup-bg"></div>
+<div class="signup-popup">
+    <img src="./img/pish.svg" alt="Illustration">
+    <form>
+        <h2>پیش ثبت نام دانش آموز</h2>
+        <p>اگه برای ثبتنام و شرکت در کلاسها نیاز به مشاوره داری شمارتون رو بذار تا باهات تماس بگیریم.</p>
+        <input type="text" placeholder="نام و نام خانوادگی">
+        <input type="text" placeholder="شماره تماس">
+        <select>
+            <option>شهر محل سکونت</option>
+            <option>تهران</option>
+            <option>اصفهان</option>
+            <option>مشهد</option>
+            <option>شیراز</option>
+        </select>
+        <select>
+            <option>مقطع تحصیلی</option>
+            <option>ابتدایی</option>
+            <option>متوسطه اول</option>
+            <option>متوسطه دوم</option>
+        </select>
+        <button type="submit">ارسال</button>
+    </form>
+</div>
+</body>
+</html>

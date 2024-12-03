@@ -1,0 +1,436 @@
+.screen {
+    background-image: url(https://c.animaapp.com/C2HQ3nqf/img/macbook-air---6.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    font-family: 'IRANYekan-Bold', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.screen .div {
+    overflow: hidden;
+    width: 1280px;
+    height: 1241px;
+    position: relative;
+}
+
+.screen .overlap {
+    position: absolute;
+    width: 1280px;
+    height: 1034px;
+    top: 207px;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.screen .frame {
+    display: flex;
+    flex-direction: column;
+    width: 1184px;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    top: 53px;
+    left: 44px;
+}
+
+.screen .text-wrapper {
+    align-self: stretch;
+    margin-top: -1.00px;
+    font-family: "IRANYekan-Black", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    line-height: normal;
+    position: relative;
+    letter-spacing: 0;
+    direction: rtl;
+}
+
+.screen .p {
+    align-self: stretch;
+    height: 125px;
+    font-family: "IRANYekan-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 25.2px;
+    position: relative;
+    letter-spacing: 0;
+    direction: rtl;
+}
+
+.screen .frame-2 {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 148px;
+    position: absolute;
+    top: 273px;
+    left: 134px;
+}
+
+.screen .frame-3 {
+    display: flex;
+    flex-direction: column;
+    width: 346.98px;
+    align-items: center;
+    gap: 43px;
+    position: relative;
+}
+
+.screen .frame-4 {
+    display: flex;
+    flex-direction: column;
+    width: 223px;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.screen .group {
+    position: relative;
+    width: 147.24px;
+    height: 125.6px;
+}
+
+.screen .text-wrapper-2 {
+    align-self: stretch;
+    font-family: "IRANYekan-Black", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    line-height: normal;
+    position: relative;
+    letter-spacing: 0;
+    direction: rtl;
+}
+
+.screen .frame-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.screen .frame-6 {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.screen .text-wrapper-3 {
+    position: relative;
+    width: 318px;
+    margin-top: -1.00px;
+    font-family: "IRANYekan-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 28.0px;
+    direction: rtl;
+}
+
+.screen .location {
+    position: relative;
+    width: 17.5px;
+    height: 22.51px;
+    margin-top: -0.75px;
+}
+
+.screen .frame-7 {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.screen .text-wrapper-4 {
+    position: relative;
+    width: 152px;
+    margin-top: -1.00px;
+    font-family: "IRANYekan-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: 28.0px;
+}
+
+.screen .call {
+    position: relative;
+    width: 19.48px;
+    height: 19.48px;
+    margin-right: -0.75px;
+}
+
+.screen .image {
+    position: relative;
+    width: 270px;
+    height: 269px;
+    object-fit: cover;
+}
+
+.screen .img {
+    position: relative;
+    width: 6px;
+    height: 558.44px;
+}
+
+.screen .frame-8 {
+    display: flex;
+    flex-direction: column;
+    width: 346.98px;
+    align-items: center;
+    gap: 47px;
+    position: relative;
+}
+
+.screen .frame-9 {
+    display: flex;
+    flex-direction: column;
+    width: 239px;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.screen .group-2 {
+    position: relative;
+    width: 133.3px;
+    height: 119.61px;
+}
+
+.screen .image-2 {
+    position: absolute;
+    width: 1380px;
+    height: 1034px;
+    top: 3894px;
+    left: 590px;
+    object-fit: cover;
+}
+
+.screen .overlap-group {
+    position: absolute;
+    width: 1299px;
+    height: 283px;
+    top: -87px;
+    left: -19px;
+}
+
+.screen .asset {
+    position: absolute;
+    width: 1299px;
+    height: 265px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    opacity: 0.3;
+}
+
+.screen .rectangle {
+    position: absolute;
+    width: 1340px;
+    height: 469px;
+    top: -587px;
+    left: -130px;
+}
+
+.screen .rectangle-2 {
+    position: absolute;
+    width: 1278px;
+    height: 169px;
+    top: 178px;
+    left: 19px;
+    background-color: #ffffff;
+    border-radius: 24px 24px 0px 0px;
+}
+
+.screen .frame-10 {
+    display: flex;
+    flex-direction: column;
+    width: 1222px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 199px;
+    left: 38px;
+}
+
+.screen .frame-11 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 26px;
+    padding: 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.screen .frame-12 {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.screen .hicon-linear-down {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.screen .text-wrapper-5 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "IRANSansWeb-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 17.2px;
+    text-align: left;
+    letter-spacing: 0;
+    line-height: normal;
+    direction: rtl;
+}
+
+.screen .frame-13 {
+    display: flex;
+    width: 92px;
+    align-items: center;
+    position: relative;
+}
+
+.screen .text-wrapper-6 {
+    width: fit-content;
+    margin-top: -1.00px;
+    margin-right: -1.00px;
+    font-family: "IRANSansWeb-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 17.2px;
+    text-align: left;
+    line-height: normal;
+    position: relative;
+    letter-spacing: 0;
+    direction: rtl;
+}
+
+.screen .layer {
+    position: relative;
+    width: 1212px;
+    height: 6px;
+    margin-right: -10.00px;
+}
+
+.screen .frame-14 {
+    display: inline-flex;
+    align-items: center;
+    gap: 380px;
+    position: absolute;
+    top: 109px;
+    left: 187px;
+}
+
+.screen .frame-15 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.screen .div-wrapper {
+    display: flex;
+    width: 156px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    background-color: #000000;
+    border-radius: 16px;
+}
+
+.screen .text-wrapper-7 {
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "IRANSansWeb-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 17.2px;
+    text-align: left;
+    line-height: normal;
+    position: relative;
+    letter-spacing: 0;
+    direction: rtl;
+}
+
+.screen .frame-16 {
+    display: flex;
+    width: 156px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    background-color: #e52028;
+    border-radius: 16px;
+}
+
+.screen .frame-17 {
+    display: flex;
+    width: 156px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.screen .frame-18 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.screen .image-3 {
+    position: absolute;
+    width: 95px;
+    height: 142px;
+    top: 105px;
+    left: 44px;
+    object-fit: cover;
+}
