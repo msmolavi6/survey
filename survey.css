@@ -1,0 +1,254 @@
+*{
+    font-family: 'IRANSansWeb-Bold' !important;
+}
+
+body {
+    margin: 0;
+    background-image: url(https://c.animaapp.com/C2HQ3nqf/img/macbook-air---6.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    direction: rtl;
+}
+
+.logo{
+    justify-content: center;
+}
+
+.container {
+    margin: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.logo-cont{
+
+}
+
+.body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+.logo-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+#options-container{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.illustrations{
+    height: 100%;
+}
+
+.dialog {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 60px;
+    text-align: start;
+    width: 1020px;
+}
+
+.logo-cont h1{
+    font-size: 24px;
+}
+
+.info-dialog {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px 60px;
+    text-align: start;
+    width: 1020px;
+    height: 400px;
+}
+
+.dialog h1 {
+    font-size: 24px;
+    font-weight: 900 !important;
+    margin-bottom: 40px;
+    line-height: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.dialog h2 {
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 30px;
+    color: #333;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-bottom: 15px;
+    font-size: 18px;
+    padding: 5px 0px;
+}
+
+label::before {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="radio"] {
+    margin-left: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #66a6ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #557aff;
+}
+
+.styled-button {
+    padding: 10px 20px;
+    background-color: #0a0b1e; /* Dark navy color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-self: center;
+}
+
+.styled-button:hover {
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.styled-button:active {
+    transform: translateY(0); /* Reset lift on click */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow */
+}
+
+.styled-button2 {
+    padding: 15px 20px;
+    background-color: #0a0b1e; /* Dark navy color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-self: center;
+    width: 500px;
+}
+
+.styled-button2:hover {
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.styled-button2:active {
+    transform: translateY(0); /* Reset lift on click */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow */
+}
+
+label input[type="radio"]:checked{
+    background-color: #0a0b1e !important;
+    border-color: #0a0b1e !important;
+}
+
+
+
+body {
+    background: #efefef;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input {
+    background: 0;
+    border: 0;
+    outline: none;
+    width: 80vw;
+    max-width: 400px;
+    font-size: 1.5em;
+    transition: padding 0.3s 0.2s ease;
+}
+.input:focus {
+    padding-bottom: 5px;
+}
+.input:focus + .line:after {
+    transform: scaleX(1);
+}
+.field {
+    position: relative;
+}
+.field .line {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: -8px;
+    background: #bdc3c7;
+}
+.field .line:after {
+    content: " ";
+    position: absolute;
+    float: right;
+    width: 100%;
+    height: 3px;
+    transform: scalex(0);
+    transition: transform 0.3s ease;
+    background: #bc1a53;
+}
