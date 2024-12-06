@@ -157,6 +157,12 @@ renderQuestion();
 startBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
+    const selectedId = id.value
+    if (!selectedId) {
+        alert("لطفاً شمارنده کانون خود را وارد کنید.");
+        return;
+    }
+
     responses.id=id.value
 
     infoDialog.style.display = "none";
