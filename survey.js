@@ -159,7 +159,15 @@ startBtn.addEventListener("click", function (event) {
 
     const selectedId = id.value
     if (!selectedId) {
-        alert("لطفاً شمارنده کانون خود را وارد کنید.");
+        alert("لطفاً کد ملی خود را وارد کنید.");
+        return;
+    }
+
+    const numberPattern = /^[0-9]{10}$/;
+
+    if (!numberPattern.test(id.value)) {
+        // If validation fails, show an alert
+        alert("لطفا کد ملی صحیح وارد کنید");
         return;
     }
 
