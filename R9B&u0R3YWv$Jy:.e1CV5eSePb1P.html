@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic/build/ckeditor.css">
+    <link rel="stylesheet" href="globals.css"/>
+    <link rel="stylesheet" href="admin.css"/>
+    <style>
+        * {
+            font-family: 'IRANYekan-Bold', sans-serif !important;
+        }
+
+        input {
+            border: none
+        }
+
+        body {
+            background-image: url(https://c.animaapp.com/C2HQ3nqf/img/macbook-air---6.png);
+            background-size: cover;
+            background-position: 50% 50%;
+            font-family: 'IRANYekan-Bold', sans-serif !important;
+            background-color: #f9f9f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            height: 90vh;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-size: 1.5em;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #000;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            color: #ffffff;
+            background-color: #000;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .content h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .editor {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+            direction: rtl;
+        }
+
+        .submit-button {
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #d62839;
+        }
+    </style>
+    <title>ادمین</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+</head>
+<body>
+<div class="loaderWrapper">
+    <div class="loader">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="sidebar">
+        <h2>پنل ادمین</h2>
+        <a href="#" class="active">نظرسنجی</a>
+        <a href="#">حسابداری</a>
+        <a href="#">گذارشات هفتکی</a>
+        <a href="#">دانش آموزان</a>
+    </div>
+    <div class="content">
+        <h2>سوالات نظر سنجی</h2>
+        <div>
+            <button onclick="save()">
+                ذخیره
+            </button>
+            <button onclick="insertQuestion()">
+                افزودن سوال
+            </button>
+        </div>
+        <hr>
+        <hr>
+        <hr>
+        <!--        <p>لطفا در مورد هفته گذشته و عملکردتون بنویسید.</p>-->
+        <!--        <div class="editor">-->
+        <!--            <textarea id="editor" placeholder="اینجا بنویسید"></textarea>-->
+        <!--        </div>-->
+        <!--        <button class="submit-button" onclick="window.location.href='./index.html'">ارسال</button>-->
+        <div id="questions" style="width: 100%;overflow: scroll;">
+
+        </div>
+    </div>
+</div>
+<script>
+    let givenQuestions = []
+
+    function insertQuestion() {
+        document.getElementById("questions").innerHTML = ""
+        givenQuestions.push([["متن سوال خود را وارد کنید"]])
+        render()
+
+    }
+    const save = () => {
+        loading()
+        // return
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify(givenQuestions);
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow",
+            mode: "no-cors",
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbzMuV7XU1o17XPMhJxc58UrHkO0T6O4lRmaDKQsESCq-g2A7aBCXb6avuynzmkQvAM/exec", requestOptions)
+            .then((response) => {
+                alert("عملیات موفقیت آمیز بود")
+                window.location.reload()
+            })
+            .catch((error) => console.error(error));
+    }
+
+    const requestOptions = {
+        method: "GET",
+        redirect: "follow"
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbyRETsLIj8FDPD0zqAU3ARjv_Z4xTE8r-0yJjlrkoJQL7I02tfOxUSocsSXsbNMGyXS/exec", requestOptions)
+        .then((response) => {
+            return response.json()
+        })
+        .then((result) => {
+            givenQuestions = result;
+            render()
+        })
+        .catch((error) => console.error(error));
+
+    ClassicEditor.create(document.querySelector('#editor'), {
+        language: 'fa',
+        height: '300px'
+    })
+        .catch(error => {
+            console.error(error);
+        });
+
+    function loading() {
+        const loaderWrapper = document.querySelector('.loaderWrapper');
+
+        loaderWrapper.style.opacity = "1"
+    }
+
+    function render() {
+        givenQuestions.forEach((question, j) => {
+            question.forEach((answer, i) => {
+                if (i == 0) {
+                    const deleteButton = document.createElement("button");
+                    deleteButton.innerText = "حذف سوال"
+                    deleteButton.style.marginInline = "15px";
+                    deleteButton.onclick = () => {
+                        givenQuestions = givenQuestions.filter(function (item, index) {
+                            return index !== j
+                        })
+                        save()
+                    }
+
+                    const insertOptionButton = document.createElement("button");
+                    insertOptionButton.innerText = "افزودن گزینه"
+                    insertOptionButton.style.marginInline = "15px";
+                    insertOptionButton.onclick = () => {
+                        document.getElementById("questions").innerHTML = ""
+                        givenQuestions[i].push("متن گرینه را وارد کنید")
+                        render()
+                    }
+
+
+                    const label = document.createElement("h6");
+                    label.innerText = " سوال " + ((+j) + 1);
+                    label.appendChild(deleteButton)
+                    label.appendChild(insertOptionButton)
+                    document.getElementById("questions").appendChild(label)
+                    document.getElementById("questions").appendChild(document.createElement("br"))
+
+                    const h3 = document.createElement("input")
+                    h3.value = question[0]
+                    h3.style.width = "100%"
+                    h3.onchange = (e) => {
+                        givenQuestions[j][0] = e.target.value
+                    }
+                    document.getElementById("questions").appendChild(h3)
+                    document.getElementById("questions").appendChild(document.createElement("br"))
+                    document.getElementById("questions").appendChild(document.createElement("br"))
+                } else {
+
+                    if (answer == "") {
+                        return
+                    }
+
+                    const deleteButton = document.createElement("button");
+                    deleteButton.innerText = "حذف گزینه"
+                    deleteButton.style.marginInline = "15px";
+                    deleteButton.onclick = () => {
+                        givenQuestions[j] = givenQuestions[j].filter(function (item, index) {
+                            return index !== i
+                        })
+                        // givenQuestions[j].splice(i, 1);
+                        save()
+                    }
+
+
+                    const label = document.createElement("h6");
+                    label.innerText = " گزینه " + ((+i));
+                    label.appendChild(deleteButton)
+                    document.getElementById("questions").appendChild(label)
+                    document.getElementById("questions").appendChild(document.createElement("br"))
+                    const h4 = document.createElement("input")
+                    h4.value = answer
+                    h4.style.width = "100%"
+                    h4.onchange = (e) => {
+                        givenQuestions[j][i] = e.target.value
+                    }
+                    document.getElementById("questions").appendChild(h4)
+                    document.getElementById("questions").appendChild(document.createElement("br"))
+                    document.getElementById("questions").appendChild(document.createElement("br"))
+                }
+            })
+            document.getElementById("questions").appendChild(document.createElement("hr"))
+
+        })
+    }
+</script>
+</body>
+</html>

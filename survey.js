@@ -179,7 +179,7 @@ startBtn.addEventListener("click", function (event) {
 });
 
 function sendSurveyResponses(data) {
-    const url = "https://script.google.com/macros/s/AKfycbzD_LzGy8fBkzuil6eDkyT_1udyDJ5q07rNOosn3J6CBzLnhqPM-4qFvuf0vKC0_sgA/exec"; // Replace with your Google Apps Script URL
+    const url = "https://script.google.com/macros/s/AKfycbyRETsLIj8FDPD0zqAU3ARjv_Z4xTE8r-0yJjlrkoJQL7I02tfOxUSocsSXsbNMGyXS/exec"; // Replace with your Google Apps Script URL
 
     fetch(url, {
         method: "POST",
