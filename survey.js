@@ -5,7 +5,7 @@ const surveyData = {
     questions: [
         {
             id: 1,
-            question: "آیا پشتیبان شما طی دو هفته‌ی گذشته تاکنون (از آزمون ۱۸ آبان) با شما تماس تلفنی گرفته است؟",
+            question: "آیا پشتیبان شما طی دو هفته‌ی گذشته تاکنون (از آزمون ۳۰ آبان) با شما تماس تلفنی گرفته است؟",
             options: [
                 "خیر، ایشان تماس تلفنی نگرفتند.",
                 "بله، ایشان تماس تلفنی گرفتند.",
@@ -157,12 +157,21 @@ renderQuestion();
 startBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
-    responses.id=id.value
-
-    if(responses.id.length<10){
-        alert("لطفا کد ملی خود را وارد کنید.")
+    const selectedId = id.value
+    if (!selectedId) {
+        alert("لطفاً کد ملی خود را وارد کنید.");
         return;
     }
+
+    const numberPattern = /^[0-9]{10}$/;
+
+    if (!numberPattern.test(id.value)) {
+        // If validation fails, show an alert
+        alert("لطفا کد ملی صحیح وارد کنید");
+        return;
+    }
+
+    responses.id=id.value
 
     infoDialog.style.display = "none";
     dialog.style.display = "flex";
