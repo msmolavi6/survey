@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+<div class="container">
+    <div class="info-dialog" id="info-dialog">
+        <div class="logo-cont">
+            <h1>نظرسنجی آزمون 14 آذر</h1>
+        </div>
+        <div class="body">
+            <img src="./img/logo.png" class="logo" alt="logo" height="200px">
+
+            <!--      <div class="img">-->
+            <!--        <img src="./img/ill.svg" alt="" width="300px" height="300px">-->
+            <!--      </div>-->
+            <!--      <div class="info">-->
+
+            <div class="field">
+                <input id="id" class="input" type="text" placeholder="لطفا شمارنده کانون خود را وارد کنید."/>
+                <div class="line"></div>
+            </div>
+
+            <!--      </div>-->
+        </div>
+        <button type="submit" class="styled-button2" id="styled-button2">شروع</button>
+
+    </div>
+    <div class="dialog" id="dialog">
+        <div class="illustrations">
+            <div class="header">
+                <img src="./img/logo.png" class="logo" alt="logo" height="220">
+                <h1>نمایندگی نظرآباد قلم‌چی</h1>
+            </div>
+        </div>
+        <div class="form">
+            <h2 id="question-title">آیا پشتیبان شما طی دو هفته‌ی گذشته تاکنون (از آزمون ۱۸ آبان) با شما تماس تلفنی گرفته
+                است؟</h2>
+            <form id="question-form">
+                <div id="options-container"></div>
+                <button type="submit" class="styled-button">ارسال</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="survey.js"></script>
+</body>
+</html>
