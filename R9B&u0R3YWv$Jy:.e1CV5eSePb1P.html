@@ -151,6 +151,9 @@
         <!--            <textarea id="editor" placeholder="اینجا بنویسید"></textarea>-->
         <!--        </div>-->
         <!--        <button class="submit-button" onclick="window.location.href='./index.html'">ارسال</button>-->
+        <div id="consts">
+
+        </div>
         <div id="questions" style="width: 100%;overflow: scroll;">
 
         </div>
@@ -165,6 +168,7 @@
         render()
 
     }
+
     const save = () => {
         loading()
         // return
@@ -201,6 +205,76 @@
         .then((result) => {
             givenQuestions = result;
             render()
+        })
+        .catch((error) => console.error(error));
+
+    fetch("https://script.googleusercontent.com/macros/echo?user_content_key=cp8biWFZILFZO8q6IvO4O4ZLBSPJGf3aj5kaN65UlCRz8YH778I92Gea0AbO3b6j06-3xrr9ehYD_hD0nsSGJTH1QZv124Ttm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFbpB7NyaRw-v0c6oA7KLd5aR_zhAd-G89S-atc6zZHV1GZkcanbFawHzDM_gzs3sRr-XwcB4-2pRynrwa-KDnvGUmrPB3he6g&lib=Mb6L7AGLWVyaRP4pGYb4rmONPajJ3IafT", requestOptions)
+        .then((response) => {
+            return response.json()
+        })
+        .then((result) => {
+            console.log("CONSTS: " + JSON.stringify(result))
+            const consts = document.getElementById("consts")
+
+            result.forEach((cons) => {
+                const cont = document.createElement("div")
+                cont.style.display = "flex"
+                cont.style.alignItems = "center"
+
+                console.log(cons)
+                const inp = document.createElement("input")
+                inp.value = cons[1]
+                inp.style.fontSize = "20px"
+
+                const h5 = document.createElement("h6")
+                h5.innerHTML = cons[0]
+
+                cont.appendChild(h5)
+                cont.appendChild(inp)
+
+                const submitButton = document.createElement("button")
+                submitButton.innerText = "ذخیره عنوان"
+                submitButton.style.marginInline = "10px"
+
+                submitButton.addEventListener("click", () => {
+                    loading()
+                    const myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+
+                    const data = {}
+
+                    data[cons[0]] = inp.value
+
+                    const raw = JSON.stringify(data);
+
+                    const requestOptions = {
+                        method: "POST",
+                        headers: myHeaders,
+                        body: raw,
+                        redirect: "follow",
+                        mode: "no-cors",
+                    };
+
+                    fetch("https://script.google.com/macros/s/AKfycbzFAjyHHGhLTRLUEyX2282OTJm1f3IOcbiGMuwrVed8P9ZHoKVw3r74rhmi15VwB4M/exec", requestOptions)
+                        .then((response) => response.text())
+                        .then(() => {
+                            alert("عملیات موفقیت آمیز بود")
+                            window.location.reload()
+                        })
+                        .catch((error) => console.error(error));
+                })
+
+                cont.appendChild(submitButton)
+
+                cont.appendChild(document.createElement("br"))
+                cont.appendChild(document.createElement("br"))
+                cont.appendChild(document.createElement("br"))
+
+                consts.appendChild(cont)
+            })
+            consts.appendChild(document.createElement("br"))
+            consts.appendChild(document.createElement("br"))
+            consts.appendChild(document.createElement("br"))
         })
         .catch((error) => console.error(error));
 

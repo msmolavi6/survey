@@ -1,5 +1,17 @@
 // script.js
 
+const requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+fetch("https://script.googleusercontent.com/macros/echo?user_content_key=cp8biWFZILFZO8q6IvO4O4ZLBSPJGf3aj5kaN65UlCRz8YH778I92Gea0AbO3b6j06-3xrr9ehYD_hD0nsSGJTH1QZv124Ttm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFbpB7NyaRw-v0c6oA7KLd5aR_zhAd-G89S-atc6zZHV1GZkcanbFawHzDM_gzs3sRr-XwcB4-2pRynrwa-KDnvGUmrPB3he6g&lib=Mb6L7AGLWVyaRP4pGYb4rmONPajJ3IafT", requestOptions)
+    .then((response) => {
+        return response.json()
+    }).then(json => {
+    console.log(json);
+        document.getElementById("surveyTitle").innerHTML = json[0][1]
+})
+
 // JSON containing the survey questions
 const surveyData = {
     questions: [
@@ -116,26 +128,23 @@ questionForm.addEventListener("submit", function (event) {
     // Move to the next question
     currentQuestionIndex++;
 
-    if (currentQuestionIndex==1){
-        a1=+selectedOption.value
+    if (currentQuestionIndex == 1) {
+        a1 = +selectedOption.value
         a1++
 
-    }else if (currentQuestionIndex==2){
-        a2=+selectedOption.value
+    } else if (currentQuestionIndex == 2) {
+        a2 = +selectedOption.value
         a2++
-    }
-    else if (currentQuestionIndex==3){
-        a3=+selectedOption.value
+    } else if (currentQuestionIndex == 3) {
+        a3 = +selectedOption.value
         a3++
 
-    }
-    else if (currentQuestionIndex==4){
-        a4=+selectedOption.value
+    } else if (currentQuestionIndex == 4) {
+        a4 = +selectedOption.value
         a4++
 
-    }
-    else if (currentQuestionIndex==5){
-        a5=+selectedOption.value
+    } else if (currentQuestionIndex == 5) {
+        a5 = +selectedOption.value
         a5++
         sendSurveyResponses(responses);
     }
@@ -171,7 +180,7 @@ startBtn.addEventListener("click", function (event) {
         return;
     }
 
-    responses.id=id.value
+    responses.id = id.value
 
     infoDialog.style.display = "none";
     dialog.style.display = "flex";
@@ -185,7 +194,7 @@ function sendSurveyResponses(data) {
         method: "POST",
         mode: "no-cors",
         body: JSON.stringify({
-            id:responses.id,
+            id: responses.id,
             answers: `${a1}-${a2}-${a3}-${a4}-${a5}`
         }),
         headers: {
