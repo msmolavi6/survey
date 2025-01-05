@@ -12,6 +12,10 @@ body {
     z-index: 1;
 }
 
+input{
+    border-bottom:1px solid black;
+}
+
 .loaderWrapper {
     position: fixed;
     opacity: 0;
