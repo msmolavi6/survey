@@ -9,7 +9,7 @@ fetch("https://script.googleusercontent.com/macros/echo?user_content_key=cp8biWF
         return response.json()
     }).then(json => {
     console.log(json);
-        document.getElementById("surveyTitle").innerHTML = json[0][1]
+    document.getElementById("surveyTitle").innerHTML = json[0][1]
 })
 
 // JSON containing the survey questions
@@ -137,7 +137,6 @@ const surveyData = {
 };
 
 
-
 const responses = {}
 
 // DOM elements
@@ -154,6 +153,7 @@ let a2 = 0
 let a3 = 0
 let a4 = 0
 let a5 = 0
+let awnsers = []
 
 let currentQuestionIndex = 0;
 
@@ -196,8 +196,9 @@ questionForm.addEventListener("submit", function (event) {
     }
 
     // Move to the next question
+    awnsers[currentQuestionIndex] = (+selectedOption.value)
+    awnsers[currentQuestionIndex]++
     currentQuestionIndex++;
-
     if (currentQuestionIndex == 1) {
         a1 = +selectedOption.value
         a1++
@@ -216,6 +217,13 @@ questionForm.addEventListener("submit", function (event) {
     } else if (currentQuestionIndex == 5) {
         a5 = +selectedOption.value
         a5++
+        // sendSurveyResponses(responses);
+    }
+
+    if(currentQuestionIndex == surveyData.questions.length){
+        questionTitle.textContent = "پایان نظرسنجی. از شما متشکریم!";
+        optionsContainer.innerHTML = "";
+        questionForm.style.display = "none";
         sendSurveyResponses(responses);
     }
 
@@ -223,10 +231,10 @@ questionForm.addEventListener("submit", function (event) {
     if (currentQuestionIndex < surveyData.questions.length) {
         renderQuestion();
     } else {
-        // End of survey
-        questionTitle.textContent = "پایان نظرسنجی. از شما متشکریم!";
-        optionsContainer.innerHTML = "";
-        questionForm.style.display = "none";
+        // // End of survey
+        // questionTitle.textContent = "پایان نظرسنجی. از شما متشکریم!";
+        // optionsContainer.innerHTML = "";
+        // questionForm.style.display = "none";
     }
 });
 
@@ -259,13 +267,12 @@ startBtn.addEventListener("click", function (event) {
 
 function sendSurveyResponses(data) {
     const url = "https://script.google.com/macros/s/AKfycbyRETsLIj8FDPD0zqAU3ARjv_Z4xTE8r-0yJjlrkoJQL7I02tfOxUSocsSXsbNMGyXS/exec"; // Replace with your Google Apps Script URL
-
     fetch(url, {
         method: "POST",
         mode: "no-cors",
         body: JSON.stringify({
             id: responses.id,
-            answers: `${a1}-${a2}-${a3}-${a4}-${a5}`
+            answers: awnsers.join("-")
         }),
         headers: {
             'Content-Type': 'application/json',
