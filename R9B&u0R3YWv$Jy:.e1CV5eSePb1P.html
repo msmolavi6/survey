@@ -169,13 +169,17 @@
 
     }
 
+    function removeEmptyElements(arr) {
+        return arr.map(subArray => subArray.filter(item => item !== ""));
+    }
+
     const save = () => {
         loading()
         // return
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-
-        const raw = JSON.stringify(givenQuestions);
+        const raw = JSON.stringify(removeEmptyElements(givenQuestions));
+        console.log("givenQuestions",givenQuestions)
 
         const requestOptions = {
             method: "POST",
@@ -203,7 +207,9 @@
             return response.json()
         })
         .then((result) => {
-            givenQuestions = result;
+            givenQuestions = removeEmptyElements(result);
+            console.log(givenQuestions)
+
             render()
         })
         .catch((error) => console.error(error));
@@ -311,7 +317,8 @@
                     insertOptionButton.style.marginInline = "15px";
                     insertOptionButton.onclick = () => {
                         document.getElementById("questions").innerHTML = ""
-                        givenQuestions[i].push("متن گرینه را وارد کنید")
+                        console.log(i,j)
+                        givenQuestions[j].push("متن گرینه را وارد کنید")
                         render()
                     }
 

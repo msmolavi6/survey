@@ -17,124 +17,42 @@ const surveyData = {
     questions: [
         {
             id: 1,
-            question: "پشتیبان شما از آزمون آذر تا 21 دی چند بار با شما تماس تلفنی گرفته است؟",
+            question: "test",
             options: [
                 "دو بار",
                 "یک بار",
                 "فقط پیام متنی فرستاد",
                 "تماس نگرفت"
             ]
-        },
-        {
-            id: 2,
-            question: "آیا پشتیبان شما برای شما جلسه حضوری در مورد ایام امتحانات برگزار کرده است؟",
-            options: [
-                "بله",
-                "خیر"
-            ]
-        },
-        {
-            id: 3,
-            question: "چقدر از مشاوره‌های پشتیبان خود در ایام امتحانات راضی هستید؟",
-            options: [
-                "خیلی راضی",
-                "راضی",
-                "کمی راضی",
-                "ناراضی"
-            ]
-        },
-        {
-            id: 4,
-            question: "آیا جلسات مشاوره‌ای که پشتیبانت برگزار کرد، مفید بود؟",
-            options: [
-                "خیلی مفید",
-                "مفید",
-                "کمی مفید",
-                "شرکت نکردم"
-            ]
-        },
-        {
-            id: 5,
-            question: "از کدام بخش از خدمات پشتیبانی بیشتر راضی بودید؟",
-            options: [
-                "پاسخگویی به سوالات",
-                "مدیریت زمان",
-                "محتوای آموزشی",
-                "همه موارد"
-            ]
-        },
-        {
-            id: 6,
-            question: "آیا پشتیبان به خوبی به سوالات شما پاسخ می دهد؟",
-            options: [
-                "بله، همیشه",
-                "بله، اکثر اوقات",
-                "گاهی",
-                "خیر، هرگز"
-            ]
-        },
-        {
-            id: 7,
-            question: "آیا احساس می‌کنید که پشتیبان به شما در مدیریت زمان کمک می کند؟",
-            options: [
-                "بله، خیلی کمک کردند",
-                "بله، کمک کردند",
-                "کمکی نکردند",
-                "نه، هیچ کمکی نکردند"
-            ]
-        },
-        {
-            id: 8,
-            question: "از محتوای آموزشی ارائه شده در جلسات مشاوره‌ای راضی بودید؟",
-            options: [
-                "بسیار راضی",
-                "راضی",
-                "کمی راضی",
-                "ناراضی"
-            ]
-        },
-        {
-            id: 9,
-            question: "آیا پیشنهاد خاصی برای بهبود عملکرد پشتیبان خود دارید؟",
-            options: [
-                "افزایش تعداد جلسات",
-                "بهبود محتوای آموزشی",
-                "ارائه حمایت روانی بیشتر",
-                "تعویض پشتیبان"
-            ]
-        },
-        {
-            id: 10,
-            question: "آیا به نظرت پشتیبان شما زمان کافی را به شما اختصاص می دهد؟",
-            options: [
-                "بله، کاملاً",
-                "بله، معمولاً",
-                "گاهی",
-                "خیر"
-            ]
-        },
-        {
-            id: 11,
-            question: "چقدر اطلاعات پشتیبان شما درباره منابع امتحانی مفید بود؟",
-            options: [
-                "بسیار مفید",
-                "مفید",
-                "کم‌فایده",
-                "بی‌فایده"
-            ]
-        },
-        {
-            id: 12,
-            question: "آیا پشتیبان به شما در شناسایی نقاط ضعف و قوت کمک کرده است؟",
-            options: [
-                "بله، بسیار زیاد",
-                "بله، زیاد",
-                "کمی",
-                "خیر"
-            ]
         }
     ]
 };
+
+function convertSurveyData(originalData) {
+    return originalData.map((data, index) => ({
+        id: index + 1,
+        question: data[0],
+        options: data.slice(1) // Take all elements except the first one for options
+    }));
+}
+
+function removeEmptyElements(arr) {
+    return arr.map(subArray => subArray.filter(item => item !== ""));
+}
+
+fetch("https://script.google.com/macros/s/AKfycbyRETsLIj8FDPD0zqAU3ARjv_Z4xTE8r-0yJjlrkoJQL7I02tfOxUSocsSXsbNMGyXS/exec", requestOptions)
+    .then((response) => {
+        return response.json()
+    })
+    .then((result) => {
+        console.log(convertSurveyData(removeEmptyElements(result)))
+        surveyData.questions=convertSurveyData(removeEmptyElements(result))
+        renderQuestion()
+    })
+    .catch((error) => console.error(error));
+
+
+
 
 
 const responses = {}
@@ -238,8 +156,7 @@ questionForm.addEventListener("submit", function (event) {
     }
 });
 
-// Initial render
-renderQuestion();
+
 
 startBtn.addEventListener("click", function (event) {
     event.preventDefault();
