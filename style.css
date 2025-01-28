@@ -11,7 +11,7 @@
     background-size: cover;
     background-position: 50% 50%;
     width: 1512px;
-    height: 3660px;
+    height: 2850px;
     position: relative;
 }
 
@@ -104,6 +104,10 @@
     letter-spacing: 0;
     line-height: normal;
     direction: rtl;
+}
+
+.pointer-text{
+    cursor: pointer;
 }
 
 .macbook-air .frame-6 {
@@ -610,6 +614,18 @@
     flex: 0 0 auto;
 }
 
+.macbook-air .frame-211 {
+    display: flex;
+    flex-direction: column;
+    width: 326px;
+    align-items: flex-start;
+    gap: 19px;
+    position: relative;
+    flex: 0 0 auto;
+    border:none;
+    color:transparent;
+}
+
 .macbook-air .div-wrapper {
     display: flex;
     align-items: center;
@@ -631,12 +647,28 @@
     margin-top: -1.00px;
     font-family: "IRANYekan-Regular", Helvetica;
     font-weight: 400;
-    color: #000000;
     font-size: 16px;
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
     direction: rtl;
+    border: none;
+    background: transparent;
+}
+
+.macbook-air .text-wrapper-151 {
+    position: relative;
+    width: 100%;
+    margin-top: -1.00px;
+    font-family: "IRANYekan-Regular", Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    direction: rtl;
+    border: none;
+    background: transparent;
 }
 
 .macbook-air .frame-22 {
@@ -1020,7 +1052,7 @@
     position: absolute;
     width: 1428px;
     height: 509px;
-    top: 3079px;
+    top: 2300px;
     left: 24px;
 }
 
@@ -1086,7 +1118,7 @@
     font-weight: 500;
     color: #000000;
     font-size: 18px;
-    text-align: justify;
+    text-align: center;
     letter-spacing: 0;
     line-height: 25.2px;
     direction: rtl;
@@ -1186,7 +1218,7 @@
 .macbook-air .text-wrapper-29 {
     position: absolute;
     width: 152px;
-    top: 400px;
+    top: 450px;
     left: 290px;
     font-family: "IRANYekan-Regular", Helvetica;
     font-weight: 400;
@@ -1209,6 +1241,6 @@
     position: absolute;
     width: 23px;
     height: 19px;
-    top: 401px;
+    top: 451px;
     left: 501px;
 }

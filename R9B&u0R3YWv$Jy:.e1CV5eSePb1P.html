@@ -73,6 +73,7 @@
         }
 
         .content {
+            overflow: auto;
             flex-grow: 1;
             padding: 40px;
             display: flex;
@@ -128,9 +129,9 @@
 <div class="container">
     <div class="sidebar">
         <h2>پنل ادمین</h2>
-        <a href="#" class="active">نظرسنجی</a>
+        <a href="#" class="active">مدیریت</a>
         <a href="#">حسابداری</a>
-        <a href="#">گذارشات هفتکی</a>
+        <a href="#">گذارشات هفتگی</a>
         <a href="#">دانش آموزان</a>
     </div>
     <div class="content">
@@ -146,16 +147,25 @@
         <hr>
         <hr>
         <hr>
-        <!--        <p>لطفا در مورد هفته گذشته و عملکردتون بنویسید.</p>-->
-        <!--        <div class="editor">-->
-        <!--            <textarea id="editor" placeholder="اینجا بنویسید"></textarea>-->
-        <!--        </div>-->
-        <!--        <button class="submit-button" onclick="window.location.href='./index.html'">ارسال</button>-->
-        <div id="consts">
+                <p>لطفا در مورد هفته گذشته و عملکردتون بنویسید.</p>
+                <div class="editor">
+                    <textarea id="editor" placeholder="اینجا بنویسید"></textarea>
+                </div>
+                <button class="submit-button" onclick="window.location.href='./index.html'">ارسال</button>
+
+        <div id="questions" style="width: 100%;">
 
         </div>
-        <div id="questions" style="width: 100%;overflow: scroll;">
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <div id="consts">
         </div>
     </div>
 </div>
@@ -179,7 +189,7 @@
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         const raw = JSON.stringify(removeEmptyElements(givenQuestions));
-        console.log("givenQuestions",givenQuestions)
+        console.log("givenQuestions", givenQuestions)
 
         const requestOptions = {
             method: "POST",
@@ -222,7 +232,7 @@
             console.log("CONSTS: " + JSON.stringify(result))
             const consts = document.getElementById("consts")
 
-            result.forEach((cons) => {
+            result.forEach((cons, i) => {
                 const cont = document.createElement("div")
                 cont.style.display = "flex"
                 cont.style.alignItems = "center"
@@ -231,6 +241,9 @@
                 const inp = document.createElement("input")
                 inp.value = cons[1]
                 inp.style.fontSize = "20px"
+                inp.onchange = () => {
+                    result[i][1] = inp.value
+                }
 
                 const h5 = document.createElement("h6")
                 h5.innerHTML = cons[0]
@@ -249,7 +262,11 @@
 
                     const data = {}
 
-                    data[cons[0]] = inp.value
+                    result.forEach((item, i) => {
+                        data[item[0]] = item[1]
+                    })
+
+                    data.sheet="sheet3"
 
                     const raw = JSON.stringify(data);
 
@@ -261,7 +278,7 @@
                         mode: "no-cors",
                     };
 
-                    fetch("https://script.google.com/macros/s/AKfycbzFAjyHHGhLTRLUEyX2282OTJm1f3IOcbiGMuwrVed8P9ZHoKVw3r74rhmi15VwB4M/exec", requestOptions)
+                    fetch("https://script.google.com/macros/s/AKfycbziDacyBugXlUw45VtXJBcPlZAxFnwVg-0g6yexZS4HFvMTj5tsCB1a7N6RyKteQ1eZ/exec", requestOptions)
                         .then((response) => response.text())
                         .then(() => {
                             alert("عملیات موفقیت آمیز بود")
@@ -317,7 +334,7 @@
                     insertOptionButton.style.marginInline = "15px";
                     insertOptionButton.onclick = () => {
                         document.getElementById("questions").innerHTML = ""
-                        console.log(i,j)
+                        console.log(i, j)
                         givenQuestions[j].push("متن گرینه را وارد کنید")
                         render()
                     }

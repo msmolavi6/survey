@@ -352,6 +352,21 @@ select{
     border-color: #000000;
 }
 
+.screen .frame-131 {
+    display: flex;
+    width: 326px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #000000;
+    direction: rtl;
+    color:black;
+}
+
 .screen .overlap-wrapper {
     width: 104px;
     margin-right: -2.00px;
@@ -488,8 +503,31 @@ select{
     border-color: #000000;
 }
 
+.screen .frame-151 {
+    display: flex;
+    height: 170px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
 .screen .group-6 {
     width: 243px;
+    margin-right: -2.00px;
+    position: relative;
+    height: 28px;
+}
+
+.screen .group-61 {
+    width: 100%;
     margin-right: -2.00px;
     position: relative;
     height: 28px;
@@ -620,4 +658,34 @@ select{
     letter-spacing: 0;
     line-height: normal;
     direction: rtl;
+}
+.editable-div {
+    width: 100%;
+    font-family: "IRANYekan-Medium", Helvetica;
+    padding: 10px;
+    font-size: 16px;
+    min-height: 40px;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+.editable-div[contenteditable="true"]:empty:before {
+    content: attr(placeholder);
+    font-style: italic;
+}
+
+.text-wrapper-81 {
+    direction: rtl;
+    width: 100%;
+    padding: 10px;
+    font-family: "IRANYekan-Regular", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    min-height: 100px;
+    resize: vertical;  /* Optional: Allows the user to resize the textarea vertically */
+    border:none
+}
+
+.text-wrapper-81:focus {
+    border:none
 }
